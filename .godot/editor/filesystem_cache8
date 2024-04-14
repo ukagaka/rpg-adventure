@@ -1,0 +1,9 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1713065955
+char_blue_1.png::CompressedTexture2D::8440835444155233150::1713064457::1713065955::1::::<><>::
+icon.svg::CompressedTexture2D::4799796584994831966::1713063864::1713065955::1::::<><>::
+player.gd::GDScript::-1::1713065902::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::2402556463608566622::1713065747::0::1::::<><>::uid://dsi2ldqqfqtc5::::res://char_blue_1.png<>res://player.gd
+README.md::TextFile::-1::1713065895::0::1::::<><>::
+Tree-Assets.png::CompressedTexture2D::2843232944905160636::1713064060::1713065955::1::::<><>::
+world.tscn::PackedScene::6890441738954833204::1713065747::0::1::::<><>::uid://bgrjvpwyxuxge::::res://Tree-Assets.png<>uid://bah20vs1e6lfq::::res://player.tscn
