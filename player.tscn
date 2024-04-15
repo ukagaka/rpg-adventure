@@ -194,3 +194,7 @@ shape = SubResource("RectangleShape2D_wo2u2")
 libraries = {
 "": SubResource("AnimationLibrary_1qqp6")
 }
+
+[node name="CoyoteTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
