@@ -10,6 +10,11 @@ var gravity := ProjectSettings.get("physics/2d/default_gravity") as float
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 @onready var coyote_timer: Timer = $CoyoteTimer
+@onready var jump_request_timer: Timer = $JumpRequestTimer
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("jump"):
+		jump_request_timer.start()
 
 
 func _physics_process(delta:float) -> void:
@@ -21,18 +26,18 @@ func _physics_process(delta:float) -> void:
 	var acceleration := FLOOR_ACCELERATION if is_on_floor() else AIR_ACCELERATION
 	velocity.x = move_toward(velocity.x, direction * RUN_SPEED, FLOOR_ACCELERATION * delta)
 	
-	#设置重力，
+	#设置重力
 	velocity.y += gravity * delta
 	
 	#如果离开了地面，并且定期器大于 0，说明是掉入悬崖掉下去了
 	var can_jum := is_on_floor() or coyote_timer.time_left > 0
-	var should_jump := can_jum and Input.is_action_just_pressed("jump")
-	#if should_jump:
-		#velocity.y = JUMP_VELOCITY
-		#coyote_timer.stop()
-	
-	if should_jump: 
+	var should_jump := can_jum and jump_request_timer.time_left > 0
+	if should_jump:
+		#如果快掉下去的瞬间，按住跳跃键的话，不让角色掉下去，而是跳跃
 		velocity.y = JUMP_VELOCITY
+		#离开地面瞬间起跳后，需要停止动画播放
+		coyote_timer.stop()
+		jump_request_timer.stop()
 	
 	if is_on_floor():
 		if is_zero_approx(direction) and is_zero_approx(velocity.x):
