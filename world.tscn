@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5f1tlpsk3rsm"]
+[gd_scene load_steps=8 format=3 uid="uid://c5f1tlpsk3rsm"]
 
-[ext_resource type="Texture2D" uid="uid://bgrjvpwyxuxge" path="res://Tree-Assets.png" id="1_frukv"]
+[ext_resource type="Texture2D" uid="uid://bgrjvpwyxuxge" path="res://assets/legacy_fantasy/trees/Tree-Assets.png" id="1_frukv"]
 [ext_resource type="Script" path="res://world.gd" id="1_wp80j"]
 [ext_resource type="PackedScene" uid="uid://bah20vs1e6lfq" path="res://player.tscn" id="2_gtqss"]
+[ext_resource type="Texture2D" uid="uid://cm36ovvufme5r" path="res://assets/legacy_fantasy/background/Background.png" id="4_mrpj4"]
+[ext_resource type="Texture2D" uid="uid://d4frfl5vltmt7" path="res://assets/legacy_fantasy/trees/Background.png" id="5_e00s6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ccof1"]
 texture = ExtResource("1_frukv")
@@ -481,3 +483,259 @@ position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 editor_draw_drag_margin = true
+
+[node name="Decorations" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Background" type="ParallaxBackground" parent="Decorations"]
+
+[node name="Sky" type="ParallaxLayer" parent="Decorations/Background"]
+position = Vector2(-1, 0)
+motion_scale = Vector2(0.3, 0.1)
+motion_mirroring = Vector2(480, 2.08165e-12)
+
+[node name="Background" type="Sprite2D" parent="Decorations/Background/Sky"]
+texture = ExtResource("4_mrpj4")
+centered = false
+
+[node name="Hills" type="ParallaxLayer" parent="Decorations/Background"]
+motion_scale = Vector2(0.5, 0.3)
+motion_mirroring = Vector2(384, 2.08165e-12)
+
+[node name="Background" type="Sprite2D" parent="Decorations/Background/Hills"]
+position = Vector2(47, 175)
+texture = ExtResource("5_e00s6")
+region_enabled = true
+region_rect = Rect2(800, 0, 96, 256)
+
+[node name="Background2" type="Sprite2D" parent="Decorations/Background/Hills"]
+position = Vector2(143, 174)
+texture = ExtResource("5_e00s6")
+region_enabled = true
+region_rect = Rect2(800, 0, 96, 256)
+
+[node name="Background3" type="Sprite2D" parent="Decorations/Background/Hills"]
+position = Vector2(239, 173)
+texture = ExtResource("5_e00s6")
+region_enabled = true
+region_rect = Rect2(800, 0, 96, 256)
+
+[node name="Background4" type="Sprite2D" parent="Decorations/Background/Hills"]
+position = Vector2(335, 174)
+texture = ExtResource("5_e00s6")
+region_enabled = true
+region_rect = Rect2(800, 0, 96, 256)
+
+[node name="Trees" type="ParallaxLayer" parent="Decorations/Background"]
+motion_scale = Vector2(0.6, 0.5)
+motion_mirroring = Vector2(384, 2.08165e-12)
+
+[node name="Background" type="Sprite2D" parent="Decorations/Background/Trees"]
+position = Vector2(48, 231)
+texture = ExtResource("5_e00s6")
+region_enabled = true
+region_rect = Rect2(112, 0, 96, 256)
+
+[node name="Background2" type="Sprite2D" parent="Decorations/Background/Trees"]
+position = Vector2(144, 231)
+texture = ExtResource("5_e00s6")
+region_enabled = true
+region_rect = Rect2(112, 0, 96, 256)
+
+[node name="Background3" type="Sprite2D" parent="Decorations/Background/Trees"]
+position = Vector2(240, 231)
+texture = ExtResource("5_e00s6")
+region_enabled = true
+region_rect = Rect2(112, 0, 96, 256)
+
+[node name="Background4" type="Sprite2D" parent="Decorations/Background/Trees"]
+position = Vector2(336, 231)
+texture = ExtResource("5_e00s6")
+region_enabled = true
+region_rect = Rect2(112, 0, 96, 256)
+
+[node name="Bushes" type="ParallaxLayer" parent="Decorations/Background"]
+motion_scale = Vector2(0.9, 0.9)
+
+[node name="Tree-assets" type="Sprite2D" parent="Decorations/Background/Bushes"]
+position = Vector2(81, 178)
+texture = ExtResource("1_frukv")
+region_enabled = true
+region_rect = Rect2(210, 5, 124, 86)
+
+[node name="Tree-assets2" type="Sprite2D" parent="Decorations/Background/Bushes"]
+position = Vector2(587, 168)
+texture = ExtResource("1_frukv")
+region_enabled = true
+region_rect = Rect2(210, 5, 124, 86)
+
+[node name="Tree-assets3" type="Sprite2D" parent="Decorations/Background/Bushes"]
+position = Vector2(146, -37)
+texture = ExtResource("1_frukv")
+region_enabled = true
+region_rect = Rect2(210, 5, 124, 86)
+
+[node name="Tree-assets4" type="Sprite2D" parent="Decorations/Background/Bushes"]
+position = Vector2(1038, 173)
+texture = ExtResource("1_frukv")
+region_enabled = true
+region_rect = Rect2(210, 5, 124, 86)
+
+[node name="Tree-assets5" type="Sprite2D" parent="Decorations/Background/Bushes"]
+position = Vector2(776, 169)
+texture = ExtResource("1_frukv")
+region_enabled = true
+region_rect = Rect2(210, 5, 124, 86)
+
+[node name="Tree-assets6" type="Sprite2D" parent="Decorations/Background/Bushes"]
+position = Vector2(1074, -149)
+texture = ExtResource("1_frukv")
+region_enabled = true
+region_rect = Rect2(210, 5, 124, 86)
+
+[node name="Tree-assets7" type="Sprite2D" parent="Decorations/Background/Bushes"]
+position = Vector2(753, -130)
+texture = ExtResource("1_frukv")
+region_enabled = true
+region_rect = Rect2(210, 5, 124, 86)
+
+[node name="Tree-assets8" type="Sprite2D" parent="Decorations/Background/Bushes"]
+position = Vector2(1107, -22)
+texture = ExtResource("1_frukv")
+region_enabled = true
+region_rect = Rect2(210, 5, 124, 86)
+
+[node name="Tree-assets9" type="Sprite2D" parent="Decorations/Background/Bushes"]
+position = Vector2(935, -160)
+texture = ExtResource("1_frukv")
+region_enabled = true
+region_rect = Rect2(210, 5, 124, 86)
+
+[node name="Tree-assets10" type="Sprite2D" parent="Decorations/Background/Bushes"]
+position = Vector2(234, -71)
+texture = ExtResource("1_frukv")
+region_enabled = true
+region_rect = Rect2(210, 5, 124, 86)
+
+[node name="Tree-assets11" type="Sprite2D" parent="Decorations/Background/Bushes"]
+position = Vector2(61, -139)
+texture = ExtResource("1_frukv")
+region_enabled = true
+region_rect = Rect2(210, 5, 124, 86)
+
+[node name="Tree-assets12" type="Sprite2D" parent="Decorations/Background/Bushes"]
+position = Vector2(694, -156)
+texture = ExtResource("1_frukv")
+region_enabled = true
+region_rect = Rect2(210, 5, 124, 86)
+
+[node name="Tree-assets13" type="Sprite2D" parent="Decorations/Background/Bushes"]
+position = Vector2(688, -113)
+rotation = 3.66519
+texture = ExtResource("1_frukv")
+region_enabled = true
+region_rect = Rect2(210, 5, 124, 86)
+
+[node name="Foreground" type="ParallaxBackground" parent="Decorations"]
+layer = 1
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Decorations/Foreground"]
+motion_offset = Vector2(1.3, 1.3)
+
+[node name="Tree-assets" type="Sprite2D" parent="Decorations/Foreground/ParallaxLayer"]
+position = Vector2(412, 198)
+rotation = 0.523598
+texture = ExtResource("1_frukv")
+region_enabled = true
+region_rect = Rect2(210, 101, 124, 86)
+
+[node name="Tree-assets15" type="Sprite2D" parent="Decorations/Foreground/ParallaxLayer"]
+position = Vector2(365, 177)
+rotation = 2.09439
+texture = ExtResource("1_frukv")
+region_enabled = true
+region_rect = Rect2(210, 101, 124, 86)
+
+[node name="Tree-assets2" type="Sprite2D" parent="Decorations/Foreground/ParallaxLayer"]
+position = Vector2(315, 198)
+rotation = 2.09439
+texture = ExtResource("1_frukv")
+region_enabled = true
+region_rect = Rect2(210, 101, 124, 86)
+
+[node name="Tree-assets5" type="Sprite2D" parent="Decorations/Foreground/ParallaxLayer"]
+position = Vector2(220, -27)
+texture = ExtResource("1_frukv")
+region_enabled = true
+region_rect = Rect2(210, 101, 124, 86)
+
+[node name="Tree-assets6" type="Sprite2D" parent="Decorations/Foreground/ParallaxLayer"]
+position = Vector2(139, -192)
+texture = ExtResource("1_frukv")
+region_enabled = true
+region_rect = Rect2(210, 101, 124, 86)
+
+[node name="Tree-assets7" type="Sprite2D" parent="Decorations/Foreground/ParallaxLayer"]
+position = Vector2(598, -185)
+texture = ExtResource("1_frukv")
+region_enabled = true
+region_rect = Rect2(210, 101, 124, 86)
+
+[node name="Tree-assets8" type="Sprite2D" parent="Decorations/Foreground/ParallaxLayer"]
+position = Vector2(747, -179)
+texture = ExtResource("1_frukv")
+region_enabled = true
+region_rect = Rect2(210, 101, 124, 86)
+
+[node name="Tree-assets9" type="Sprite2D" parent="Decorations/Foreground/ParallaxLayer"]
+position = Vector2(1120, -121)
+texture = ExtResource("1_frukv")
+region_enabled = true
+region_rect = Rect2(210, 101, 124, 86)
+
+[node name="Tree-assets10" type="Sprite2D" parent="Decorations/Foreground/ParallaxLayer"]
+position = Vector2(1027, 199)
+texture = ExtResource("1_frukv")
+region_enabled = true
+region_rect = Rect2(210, 101, 124, 86)
+
+[node name="Tree-assets14" type="Sprite2D" parent="Decorations/Foreground/ParallaxLayer"]
+position = Vector2(1083, 56)
+rotation = 1.0472
+texture = ExtResource("1_frukv")
+region_enabled = true
+region_rect = Rect2(210, 101, 124, 86)
+
+[node name="Tree-assets11" type="Sprite2D" parent="Decorations/Foreground/ParallaxLayer"]
+position = Vector2(612, 193)
+rotation = 0.261799
+texture = ExtResource("1_frukv")
+region_enabled = true
+region_rect = Rect2(210, 101, 124, 86)
+
+[node name="Tree-assets12" type="Sprite2D" parent="Decorations/Foreground/ParallaxLayer"]
+position = Vector2(764, 208)
+texture = ExtResource("1_frukv")
+region_enabled = true
+region_rect = Rect2(210, 101, 124, 86)
+
+[node name="Tree-assets13" type="Sprite2D" parent="Decorations/Foreground/ParallaxLayer"]
+position = Vector2(491, -27)
+rotation = 0.523598
+texture = ExtResource("1_frukv")
+region_enabled = true
+region_rect = Rect2(210, 101, 124, 86)
+
+[node name="Tree-assets3" type="Sprite2D" parent="Decorations/Foreground/ParallaxLayer"]
+position = Vector2(46, -66)
+texture = ExtResource("1_frukv")
+region_enabled = true
+region_rect = Rect2(210, 101, 124, 86)
+
+[node name="Tree-assets4" type="Sprite2D" parent="Decorations/Foreground/ParallaxLayer"]
+position = Vector2(76, -72)
+rotation = 0.785397
+texture = ExtResource("1_frukv")
+region_enabled = true
+region_rect = Rect2(210, 101, 124, 86)
