@@ -15,6 +15,11 @@ var gravity := ProjectSettings.get("physics/2d/default_gravity") as float
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("jump"):
 		jump_request_timer.start()
+	
+	#如果跳跃键按的快，这时候角色跳跃不够高的话，直接让跳跃高度只有一半
+	#这样就是按的跳跃键时间长就跳的高，按的快就只跳了一半
+	if event.is_action_released("jump") and velocity.y < JUMP_VELOCITY / 2:
+		velocity.y = JUMP_VELOCITY / 2
 
 
 func _physics_process(delta:float) -> void:
