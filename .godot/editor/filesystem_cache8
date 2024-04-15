@@ -1,12 +1,12 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1713169344
+::res://::1713191385
 char_blue_1.png::CompressedTexture2D::8440835444155233150::1713064457::1713065955::1::::<><>::
 icon.svg::CompressedTexture2D::4799796584994831966::1713063864::1713065955::1::::<><>::
-player.gd::GDScript::-1::1713072869::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::2402556463608566622::1713164394::0::1::::<><>::uid://dsi2ldqqfqtc5::::res://char_blue_1.png<>res://player.gd
+player.gd::GDScript::-1::1713191282::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::2402556463608566622::1713191321::0::1::::<><>::uid://dsi2ldqqfqtc5::::res://char_blue_1.png<>res://player.gd<>res://classes/StateMachine.gd
 README.md::TextFile::-1::1713073647::0::1::::<><>::
 world.gd::GDScript::-1::1713163135::0::1::::<>Node2D<>::
-world.tscn::PackedScene::6890441738954833204::1713169344::0::1::::<><>::uid://bgrjvpwyxuxge::::res://assets/legacy_fantasy/trees/Tree-Assets.png<>res://world.gd<>uid://bah20vs1e6lfq::::res://player.tscn
+world.tscn::PackedScene::6890441738954833204::1713191321::0::1::::<><>::uid://bgrjvpwyxuxge::::res://assets/legacy_fantasy/trees/Tree-Assets.png<>res://world.gd<>uid://bah20vs1e6lfq::::res://player.tscn<>uid://cm36ovvufme5r::::res://assets/legacy_fantasy/background/Background.png<>uid://d4frfl5vltmt7::::res://assets/legacy_fantasy/trees/Background.png
 ::res://assets/::1713169089
 ::res://assets/generic_char/::1713169078
 ::res://assets/legacy_fantasy/::1713169203
@@ -15,3 +15,5 @@ Background.png::CompressedTexture2D::5674818432393806605::1713169293::1713169297
 ::res://assets/legacy_fantasy/trees/::1713169344
 Background.png::CompressedTexture2D::9206102148269684542::1713169310::1713169310::1::::<><>::
 Tree-Assets.png::CompressedTexture2D::2843232944905160636::1713064060::1713169344::1::::<><>::
+::res://classes/::1713178704
+StateMachine.gd::GDScript::-1::1713178704::0::1::::StateMachine<>Node<>::
