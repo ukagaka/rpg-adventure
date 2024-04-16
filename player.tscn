@@ -566,6 +566,14 @@ hframes = 6
 region_enabled = true
 region_rect = Rect2(0, 0, 336, 56)
 
+[node name="HandChecker" type="RayCast2D" parent="Graphics"]
+position = Vector2(0, -3)
+target_position = Vector2(6, 0)
+
+[node name="FootChecker" type="RayCast2D" parent="Graphics"]
+position = Vector2(0, -28)
+target_position = Vector2(6, 0)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -15.5)
 shape = SubResource("RectangleShape2D_wo2u2")

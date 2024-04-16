@@ -25,6 +25,9 @@ var is_first_tick := false
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 @onready var coyote_timer: Timer = $CoyoteTimer
 @onready var jump_request_timer: Timer = $JumpRequestTimer
+@onready var hand_checker: RayCast2D = $Graphics/HandChecker
+@onready var foot_checker: RayCast2D = $Graphics/FootChecker
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("jump"):
@@ -112,7 +115,7 @@ func get_next_state(state: State) -> State:
 		State.FALL:
 			if is_on_floor():
 				return State.LANDING if is_still else State.RUNNING
-			if is_on_wall():
+			if is_on_wall() and hand_checker.is_colliding() and foot_checker.is_colliding():
 				return State.WALL_SLIDING
 		
 		State.LANDING:
