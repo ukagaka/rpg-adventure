@@ -17,7 +17,7 @@ const RUN_SPEED := 160.0
 const FLOOR_ACCELERATION := RUN_SPEED / 0.5
 const AIR_ACCELERATION := RUN_SPEED / 0.02
 const JUMP_VELOCITY := -320.0  
-const WALL_JUMP_VELOCITY := Vector2(400, -280)
+const WALL_JUMP_VELOCITY := Vector2(380, -280)
 
 var default_gravity := ProjectSettings.get("physics/2d/default_gravity") as float
 var is_first_tick := false
@@ -155,11 +155,13 @@ func get_next_state(state: State) -> State:
 
 
 func transition_state(from: State, to: State)-> void:
-	print("[%s] %s => %s" %[
-		Engine.get_physics_frames(),
-		State.keys()[from] if from != -1 else "<START>",
-		State.keys()[to],
-	])
+	#print("[%s] %s => %s" %[
+		#Engine.get_physics_frames(),
+		#State.keys()[from] if from != -1 else "<START>",
+		#State.keys()[to],
+	#])
+	
+	
 	if from not in GROUND_STATES and to in GROUND_STATES:
 		coyote_timer.stop()
 		
