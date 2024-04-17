@@ -11,3 +11,4 @@ res://classes/StateMachine.gd
 res://classes/Hitbox.gd
 res://ui/status_panel.tscn
 res://ui/status_panel.gd
+res://classes/Interactable.gd

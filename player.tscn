@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bah20vs1e6lfq"]
+[gd_scene load_steps=36 format=3 uid="uid://bah20vs1e6lfq"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_lhorb"]
 [ext_resource type="Texture2D" uid="uid://bgglqjwmygsdp" path="res://assets/generic_char/char_blue_2.png" id="2_k02kf"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://classes/Hitbox.gd" id="4_cam5h"]
 [ext_resource type="Script" path="res://classes/Stats.gd" id="7_xui01"]
 [ext_resource type="PackedScene" uid="uid://dw4bgssws37x1" path="res://ui/status_panel.tscn" id="8_gmv1m"]
+[ext_resource type="Texture2D" uid="uid://b6fotltdfbjt4" path="res://assets/gdb-gamepad-2/gdb-keyboard-2.png" id="9_1gt3m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1xm3u"]
 size = Vector2(12, 32)
@@ -2465,6 +2466,42 @@ _data = {
 "wall_sliding": SubResource("Animation_5oi7m")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lie1u"]
+atlas = ExtResource("9_1gt3m")
+region = Rect2(96, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6g0y"]
+atlas = ExtResource("9_1gt3m")
+region = Rect2(96, 160, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x14qb"]
+atlas = ExtResource("9_1gt3m")
+region = Rect2(96, 272, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2vjr"]
+atlas = ExtResource("9_1gt3m")
+region = Rect2(96, 384, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kt7p5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lie1u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6g0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x14qb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2vjr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_lhorb")
@@ -2555,5 +2592,11 @@ offset_top = 8.0
 offset_right = 98.0
 offset_bottom = 34.0
 stats = NodePath("../../Stats")
+
+[node name="InteractionIcon" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2, -44)
+sprite_frames = SubResource("SpriteFrames_kt7p5")
+autoplay = "default"
+frame_progress = 0.982572
 
 [connection signal="hurt" from="Graphics/Hurtbox" to="." method="_on_hurtbox_hurt"]

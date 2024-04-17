@@ -1,3 +1,6 @@
+CollisionShape2D
+Interactable
+AnimatedSprite2D
 TextureProgressBar
 VBoxContainer
 CanvasLayer
@@ -6,9 +9,6 @@ TextureRect
 HBoxContainer
 Timer
 Stats
-CollisionShape2D
 Hitbox
 Hurtbox
 RayCast2D
-StateMachine
-Node2D
