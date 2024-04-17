@@ -2,3 +2,10 @@ res://world.tscn
 res://player.tscn
 res://enemies/enemy.tscn
 res://enemies/boar.tscn
+res://classes/Stats.gd
+res://enemies/enemy.gd
+res://enemies/boar.gd
+res://classes/Damage.gd
+res://player.gd
+res://classes/StateMachine.gd
+res://classes/Hitbox.gd

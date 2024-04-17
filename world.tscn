@@ -477,7 +477,7 @@ layer_2/name = "Foreground"
 layer_2/tile_data = PackedInt32Array()
 
 [node name="Player" parent="." instance=ExtResource("2_gtqss")]
-position = Vector2(668, -2)
+position = Vector2(666, -8)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position_smoothing_enabled = true

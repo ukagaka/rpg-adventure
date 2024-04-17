@@ -1,7 +1,8 @@
+Timer
+Stats
 CollisionShape2D
 Hitbox
 Hurtbox
-Timer
 RayCast2D
 StateMachine
 Node2D

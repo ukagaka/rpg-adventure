@@ -2,6 +2,8 @@ extends Node
 
 class_name StateMachine
 
+const KEEP_CURRENT := -1
+
 var state_time: float
 
 var current_state: int = -1:
@@ -17,7 +19,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	while true:
 		var next := owner.get_next_state(current_state) as int
-		if current_state == next:
+		if next == KEEP_CURRENT:
 			break
 		current_state = next
 	
