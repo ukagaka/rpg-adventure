@@ -1,5 +1,6 @@
-CanvasLayer
 TextureProgressBar
+VBoxContainer
+CanvasLayer
 PanelContainer
 TextureRect
 HBoxContainer
@@ -11,5 +12,3 @@ Hurtbox
 RayCast2D
 StateMachine
 Node2D
-AnimationPlayer
-Sprite2D

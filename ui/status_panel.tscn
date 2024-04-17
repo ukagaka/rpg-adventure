@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dw4bgssws37x1"]
+[gd_scene load_steps=11 format=3 uid="uid://dw4bgssws37x1"]
 
 [ext_resource type="Script" path="res://ui/status_panel.gd" id="1_rkclk"]
 [ext_resource type="Texture2D" uid="uid://cgi4iikch47pq" path="res://assets/legacy_fantasy/Base-01.png" id="1_y7fql"]
@@ -28,6 +28,14 @@ region = Rect2(308, 118, 56, 4)
 atlas = ExtResource("1_y7fql")
 region = Rect2(308, 86, 56, 4)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjd1s"]
+atlas = ExtResource("1_y7fql")
+region = Rect2(307, 6, 58, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvjxb"]
+atlas = ExtResource("1_y7fql")
+region = Rect2(308, 135, 56, 2)
+
 [node name="StatusPanel" type="HBoxContainer"]
 script = ExtResource("1_rkclk")
 
@@ -40,7 +48,12 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_ubbuo")
 layout_mode = 2
 texture = SubResource("AtlasTexture_ra47i")
 
-[node name="HealthBar" type="TextureProgressBar" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="HealthBar" type="TextureProgressBar" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 max_value = 1.0
@@ -50,7 +63,7 @@ texture_over = SubResource("AtlasTexture_i1kqx")
 texture_progress = SubResource("AtlasTexture_iortt")
 texture_progress_offset = Vector2(1, 1)
 
-[node name="EasedHealthBar" type="TextureProgressBar" parent="HealthBar"]
+[node name="EasedHealthBar" type="TextureProgressBar" parent="VBoxContainer/HealthBar"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -63,4 +76,13 @@ max_value = 1.0
 step = 2.08165e-12
 value = 1.0
 texture_progress = SubResource("AtlasTexture_1rky8")
+texture_progress_offset = Vector2(1, 1)
+
+[node name="EnergyBar" type="TextureProgressBar" parent="VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 2.08165e-12
+value = 1.0
+texture_over = SubResource("AtlasTexture_vjd1s")
+texture_progress = SubResource("AtlasTexture_dvjxb")
 texture_progress_offset = Vector2(1, 1)

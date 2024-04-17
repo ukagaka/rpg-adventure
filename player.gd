@@ -34,6 +34,7 @@ const WALL_JUMP_VELOCITY := Vector2(380, -280)
 const KNOCKBACK_AMOUNT := 512.0
 const SLIDING_DURATION := 0.3
 const SLIDING_SPEED := 256.0
+const SLIDING_ENERGY := 4.0
 const LANDING_HEIGHT := 100.0
 
 var default_gravity := ProjectSettings.get("physics/2d/default_gravity") as float
@@ -153,6 +154,8 @@ func can_wall_slide() -> bool:
 
 func should_slide() -> bool:
 	if slide_request_timer.is_stopped():
+		return false
+	if stats.energy < SLIDING_ENERGY:
 		return false
 	return not foot_checker.is_colliding()
 
@@ -317,6 +320,7 @@ func transition_state(from: State, to: State)-> void:
 		State.SLIDING_START:
 			animation_player.play("sliding_start")
 			slide_request_timer.stop()
+			stats.energy -= SLIDING_ENERGY
 		State.SLIDING_LOOP:
 			animation_player.play("sliding_loop")
 		State.SLIDING_END:
