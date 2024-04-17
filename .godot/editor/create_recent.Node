@@ -1,3 +1,8 @@
+CanvasLayer
+TextureProgressBar
+PanelContainer
+TextureRect
+HBoxContainer
 Timer
 Stats
 CollisionShape2D
@@ -8,7 +13,3 @@ StateMachine
 Node2D
 AnimationPlayer
 Sprite2D
-CharacterBody2D
-ParallaxLayer
-ParallaxBackground
-Camera2D

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bah20vs1e6lfq"]
+[gd_scene load_steps=27 format=3 uid="uid://bah20vs1e6lfq"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_lhorb"]
 [ext_resource type="Texture2D" uid="uid://bgglqjwmygsdp" path="res://assets/generic_char/char_blue_2.png" id="2_k02kf"]
@@ -7,18 +7,19 @@
 [ext_resource type="Script" path="res://classes/StateMachine.gd" id="3_yyhk1"]
 [ext_resource type="Script" path="res://classes/Hitbox.gd" id="4_cam5h"]
 [ext_resource type="Script" path="res://classes/Stats.gd" id="7_xui01"]
+[ext_resource type="PackedScene" uid="uid://dw4bgssws37x1" path="res://ui/status_panel.tscn" id="8_gmv1m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1xm3u"]
 size = Vector2(12, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_87xy5"]
-size = Vector2(22.5, 9)
+size = Vector2(50, 21)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oo17l"]
-size = Vector2(33.25, 13.5)
+size = Vector2(42.625, 12.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4fy7"]
-size = Vector2(21.625, 24.75)
+size = Vector2(34, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wo2u2"]
 size = Vector2(10, 31)
@@ -1869,17 +1870,17 @@ collision_mask = 16
 script = ExtResource("4_cam5h")
 
 [node name="AttackShape" type="CollisionShape2D" parent="Graphics/Hitbox"]
-position = Vector2(15, -18)
+position = Vector2(8, -20.5)
 shape = SubResource("RectangleShape2D_87xy5")
 disabled = true
 
 [node name="AttackShape2" type="CollisionShape2D" parent="Graphics/Hitbox"]
-position = Vector2(1, -15.75)
+position = Vector2(5.6875, -16.25)
 shape = SubResource("RectangleShape2D_oo17l")
 disabled = true
 
 [node name="AttackShape3" type="CollisionShape2D" parent="Graphics/Hitbox"]
-position = Vector2(19.8125, -18.625)
+position = Vector2(24, -16.5)
 shape = SubResource("RectangleShape2D_j4fy7")
 disabled = true
 
@@ -1909,5 +1910,14 @@ script = ExtResource("3_yyhk1")
 
 [node name="Stats" type="Node" parent="."]
 script = ExtResource("7_xui01")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="StatusPanel" parent="CanvasLayer" node_paths=PackedStringArray("stats") instance=ExtResource("8_gmv1m")]
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 98.0
+offset_bottom = 34.0
+stats = NodePath("../../Stats")
 
 [connection signal="hurt" from="Graphics/Hurtbox" to="." method="_on_hurtbox_hurt"]

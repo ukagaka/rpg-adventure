@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://feukmx0joudp"]
+[gd_scene load_steps=17 format=3 uid="uid://feukmx0joudp"]
 
 [ext_resource type="PackedScene" uid="uid://dvwr4xfbc4q3h" path="res://enemies/enemy.tscn" id="1_rhq71"]
 [ext_resource type="Script" path="res://enemies/boar.gd" id="2_6br5p"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dvhrbomls6fc7" path="res://assets/legacy_fantasy/Boar/Idle-Sheet.png" id="3_i2upu"]
 [ext_resource type="Texture2D" uid="uid://dhf1uc4wn0qa1" path="res://assets/legacy_fantasy/Boar/Walk-Base-Sheet.png" id="4_77su1"]
 [ext_resource type="Texture2D" uid="uid://no8rqidoftxh" path="res://assets/legacy_fantasy/Boar/Run-Sheet.png" id="5_47p5p"]
+[ext_resource type="PackedScene" uid="uid://dw4bgssws37x1" path="res://ui/status_panel.tscn" id="7_c05hv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5i87o"]
 size = Vector2(22, 23)
@@ -536,5 +537,12 @@ libraries = {
 [node name="CalmDownTimer" type="Timer" parent="." index="4"]
 wait_time = 2.5
 one_shot = true
+
+[node name="StatusPanel" parent="." index="6" node_paths=PackedStringArray("stats") instance=ExtResource("7_c05hv")]
+offset_left = -50.0
+offset_top = -56.0
+offset_right = 38.0
+offset_bottom = -30.0
+stats = NodePath("../Stats")
 
 [connection signal="hurt" from="Graphics/Hurtbox" to="." method="_on_hurtbox_hurt"]
