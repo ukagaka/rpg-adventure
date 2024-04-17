@@ -12,3 +12,4 @@ res://classes/Hitbox.gd
 res://ui/status_panel.tscn
 res://ui/status_panel.gd
 res://classes/Interactable.gd
+res://classes/Hurbox.gd

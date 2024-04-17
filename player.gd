@@ -187,6 +187,7 @@ func get_next_state(state: State) -> int:
 		return StateMachine.KEEP_CURRENT if state == State.DYING else State.DYING
 	
 	if pending_damage:
+		print("fwae122333")
 		return State.HURT
 	
 	var can_jump := is_on_floor() or coyote_timer.time_left > 0
