@@ -1,5 +1,8 @@
 extends Node
 
+@onready var player_stats: Stats = $PlayerStats
+
+
 func change_scene(path: String, entry_point: String) -> void:
 	var tree := get_tree()
 	

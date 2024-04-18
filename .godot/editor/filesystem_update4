@@ -3,3 +3,6 @@ res://globals/game.gd
 res://world.gd
 res://objects/mine_gate.tscn
 res://globals/game.tscn
+res://player.tscn
+res://player.gd
+res://ui/status_panel.gd
