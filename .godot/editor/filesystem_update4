@@ -12,3 +12,5 @@ res://assets/titles.tres
 res://worlds/forest.gd
 res://enemies/enemy.tscn
 res://enemies/enemy.gd
+res://classes/Stats.gd
+res://classes/Teleporter.gd

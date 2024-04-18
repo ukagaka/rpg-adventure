@@ -7,4 +7,4 @@ class_name Teleporter
 
 func interact() -> void:
 	super()
-	Game.change_scene(path, entry_point)
+	Game.change_scene(path, {entry_point = entry_point})

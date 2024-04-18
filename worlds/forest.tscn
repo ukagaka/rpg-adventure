@@ -44,7 +44,7 @@ script = ExtResource("4_vpway")
 direction = -1
 
 [node name="Player" parent="." instance=ExtResource("5_x6r2y")]
-position = Vector2(944, 176)
+position = Vector2(448, 33)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position_smoothing_enabled = true
