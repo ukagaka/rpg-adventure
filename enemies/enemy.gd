@@ -24,7 +24,6 @@ var default_gravity := ProjectSettings.get("physics/2d/default_gravity") as floa
 @onready var state_machine: StateMachine = $StateMachine
 @onready var stats: Stats = $Stats
 
-
 func move(speed: float, delta:float) -> void:
 	velocity.x = move_toward(velocity.x, speed * direction, acceleration * delta)
 	velocity.y += default_gravity * delta

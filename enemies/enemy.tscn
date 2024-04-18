@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://classes/Hurbox.gd" id="3_gvtqw"]
 [ext_resource type="Script" path="res://classes/Stats.gd" id="5_7eylb"]
 
-[node name="Enemy" type="CharacterBody2D"]
+[node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 4
 script = ExtResource("1_yt7mr")
 

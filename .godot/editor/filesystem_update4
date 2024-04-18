@@ -10,3 +10,5 @@ res://worlds/forest.tscn
 res://worlds/cave.tscn
 res://assets/titles.tres
 res://worlds/forest.gd
+res://enemies/enemy.tscn
+res://enemies/enemy.gd
