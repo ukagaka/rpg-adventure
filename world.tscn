@@ -1,12 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://c5f1tlpsk3rsm"]
+[gd_scene load_steps=11 format=3 uid="uid://c5f1tlpsk3rsm"]
 
 [ext_resource type="Texture2D" uid="uid://bgrjvpwyxuxge" path="res://assets/legacy_fantasy/trees/Tree-Assets.png" id="1_frukv"]
 [ext_resource type="Script" path="res://world.gd" id="1_wp80j"]
 [ext_resource type="PackedScene" uid="uid://bah20vs1e6lfq" path="res://player.tscn" id="2_gtqss"]
+[ext_resource type="PackedScene" uid="uid://k6h4jyo8ahq4" path="res://objects/mine_gate.tscn" id="3_vxlmj"]
+[ext_resource type="Script" path="res://classes/EntryPoint.gd" id="4_mjevy"]
 [ext_resource type="Texture2D" uid="uid://cm36ovvufme5r" path="res://assets/legacy_fantasy/background/Background.png" id="4_mrpj4"]
 [ext_resource type="Texture2D" uid="uid://d4frfl5vltmt7" path="res://assets/legacy_fantasy/trees/Background.png" id="5_e00s6"]
 [ext_resource type="PackedScene" uid="uid://feukmx0joudp" path="res://enemies/boar.tscn" id="6_pl3f2"]
-[ext_resource type="Script" path="res://classes/Interactable.gd" id="7_rxkbx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ccof1"]
 texture = ExtResource("1_frukv")
@@ -464,12 +465,6 @@ terrain_set_0/terrain_1/name = "Leaves 1"
 terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
 sources/1 = SubResource("TileSetAtlasSource_ccof1")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dr1gi"]
-size = Vector2(11, 19)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ucwx6"]
-size = Vector2(18.5, 15)
-
 [node name="World" type="Node2D"]
 script = ExtResource("1_wp80j")
 
@@ -483,8 +478,28 @@ layer_1/tile_data = PackedInt32Array(655361, 262145, 3, 589825, 262145, 2, 52428
 layer_2/name = "Foreground"
 layer_2/tile_data = PackedInt32Array()
 
+[node name="MineGate" parent="TileMap" instance=ExtResource("3_vxlmj")]
+position = Vector2(1069, 222)
+path = "res://world.tscn"
+entry_point = "TopEntry"
+
+[node name="MineGate2" parent="TileMap" instance=ExtResource("3_vxlmj")]
+position = Vector2(51, -81)
+scale = Vector2(-1, 1)
+path = "res://world.tscn"
+entry_point = "BottonEntry"
+
+[node name="TopEntry" type="Marker2D" parent="TileMap"]
+position = Vector2(96, -112)
+script = ExtResource("4_mjevy")
+
+[node name="BottonEntry" type="Marker2D" parent="TileMap"]
+position = Vector2(1024, 192)
+script = ExtResource("4_mjevy")
+direction = -1
+
 [node name="Player" parent="." instance=ExtResource("2_gtqss")]
-position = Vector2(666, -8)
+position = Vector2(944, 176)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position_smoothing_enabled = true
@@ -703,7 +718,7 @@ region_enabled = true
 region_rect = Rect2(210, 101, 124, 86)
 
 [node name="Tree-assets10" type="Sprite2D" parent="Decorations/Foreground/ParallaxLayer"]
-position = Vector2(1027, 199)
+position = Vector2(1024, 224)
 texture = ExtResource("1_frukv")
 region_enabled = true
 region_rect = Rect2(210, 101, 124, 86)
@@ -750,17 +765,3 @@ region_rect = Rect2(210, 101, 124, 86)
 
 [node name="Boar" parent="." instance=ExtResource("6_pl3f2")]
 position = Vector2(530, 43)
-
-[node name="Mushroom" type="Area2D" parent="."]
-script = ExtResource("7_rxkbx")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mushroom"]
-position = Vector2(183.5, 178.5)
-shape = SubResource("RectangleShape2D_dr1gi")
-
-[node name="Vegatable" type="Area2D" parent="."]
-script = ExtResource("7_rxkbx")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Vegatable"]
-position = Vector2(215.75, 180.5)
-shape = SubResource("RectangleShape2D_ucwx6")

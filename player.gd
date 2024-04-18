@@ -2,6 +2,11 @@ extends CharacterBody2D
 
 class_name Player
 
+enum Direction {
+	LEFT = -1,
+	RIGHT = +1,
+}
+
 enum State {
 	IDLE,
 	RUNNING,
@@ -47,6 +52,13 @@ var interacting_with : Array[Interactable]
 
 #是否可以连击
 @export var can_combo := false
+
+@export var direction := Direction.RIGHT:
+	set(v):
+		direction = v
+		if not is_node_ready():
+			await ready
+		graphics.scale.x = direction
 
 @onready var graphics: Node2D = $Graphics
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
@@ -104,11 +116,11 @@ func tick_physics(state: State, delta:float) -> void:
 			stand(default_gravity, delta)
 		State.WALL_SLIDING:
 			move(default_gravity /3, delta)
-			graphics.scale.x = get_wall_normal().x
+			direction = Direction.LEFT if get_wall_normal().x < 0 else Direction.RIGHT
 		State.WALL_JUMP:
 			if state_machine.state_time < 0.1:
 				stand(0.0 if is_first_tick else default_gravity, delta)
-				graphics.scale.x = get_wall_normal().x
+				direction = Direction.LEFT if get_wall_normal().x < 0 else Direction.RIGHT
 			else:
 				move(default_gravity, delta)
 		State.ATTACK_1, State.ATTACK_2, State.ATTACK_3:
@@ -125,24 +137,24 @@ func tick_physics(state: State, delta:float) -> void:
 	is_first_tick = false
 
 func move(gravity: float, delta:float) -> void:
-	var direction := Input.get_axis("move_left", "move_right")
+	var movement := Input.get_axis("move_left", "move_right")
 	
 	#move_toward 起始值到目标值，速度的变化量
 	#速度的变化量 = 加速度 * 时间
 	#使用该方法后，人物会缓慢加速和减速，效果就是停止后
 	var acceleration := FLOOR_ACCELERATION if is_on_floor() else AIR_ACCELERATION
-	velocity.x = move_toward(velocity.x, direction * RUN_SPEED, acceleration * delta)
+	velocity.x = move_toward(velocity.x, movement * RUN_SPEED, acceleration * delta)
 	
 	#设置重力
 	velocity.y += gravity * delta
 	
-	if not is_zero_approx(direction):
-		graphics.scale.x = -1 if direction < 0 else +1
+	if not is_zero_approx(movement):
+		direction = Direction.LEFT if movement < 0 else Direction.RIGHT
 	
 	move_and_slide()
 
 
-func stand(gravity:float, delta: float)-> void:
+func stand(gravity:float, delta: float)->   void:
 	var acceleration := FLOOR_ACCELERATION if is_on_floor() else AIR_ACCELERATION
 	velocity.x = move_toward(velocity.x, 0.0, acceleration * delta)
 	velocity.y += gravity * delta
@@ -187,7 +199,6 @@ func get_next_state(state: State) -> int:
 		return StateMachine.KEEP_CURRENT if state == State.DYING else State.DYING
 	
 	if pending_damage:
-		print("fwae122333")
 		return State.HURT
 	
 	var can_jump := is_on_floor() or coyote_timer.time_left > 0
@@ -198,8 +209,8 @@ func get_next_state(state: State) -> int:
 	if state in GROUND_STATES and not is_on_floor():
 		return State.FALL
 	
-	var direction := Input.get_axis("move_left", "move_right")
-	var is_still := is_zero_approx(direction) and is_zero_approx(velocity.x)
+	var movement := Input.get_axis("move_left", "move_right")
+	var is_still := is_zero_approx(movement) and is_zero_approx(velocity.x)
 	
 	match state:
 		State.IDLE:

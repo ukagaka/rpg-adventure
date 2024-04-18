@@ -1,4 +1,7 @@
+Node
+EntryPoint
 CollisionShape2D
+Teleporter
 Interactable
 AnimatedSprite2D
 TextureProgressBar
@@ -10,5 +13,3 @@ HBoxContainer
 Timer
 Stats
 Hitbox
-Hurtbox
-RayCast2D
