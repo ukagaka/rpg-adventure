@@ -1,5 +1,7 @@
-Node
 EntryPoint
+TileMap
+ParallaxLayer
+Node
 CollisionShape2D
 Teleporter
 Interactable
@@ -10,6 +12,3 @@ CanvasLayer
 PanelContainer
 TextureRect
 HBoxContainer
-Timer
-Stats
-Hitbox

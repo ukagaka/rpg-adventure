@@ -6,3 +6,6 @@ res://globals/game.tscn
 res://player.tscn
 res://player.gd
 res://ui/status_panel.gd
+res://worlds/forest.tscn
+res://worlds/cave.tscn
+res://assets/titles.tres
