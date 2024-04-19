@@ -11,3 +11,4 @@ res://ui/title_screen.gd
 res://worlds/forest.gd
 res://worlds/cave.tscn
 res://ui/game_end_screen.gd
+res://default_bus_layout.tres
