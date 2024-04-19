@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfqbo4pexu82m"]
+[gd_scene load_steps=6 format=3 uid="uid://cfqbo4pexu82m"]
 
 [ext_resource type="AudioStream" uid="uid://doeyfctuqnf63" path="res://assets/sfx/07_human_atk_sword_1.ogg" id="1_803nd"]
 [ext_resource type="Script" path="res://globals/sound_manager.gd" id="1_o2j0w"]
 [ext_resource type="AudioStream" uid="uid://qesgiibtmei5" path="res://assets/sfx/12_human_jump_3.ogg" id="2_t7oor"]
+[ext_resource type="AudioStream" uid="uid://cxotepd46tobn" path="res://assets/sfx/impactGlass_heavy_004.ogg" id="4_gpl6j"]
+[ext_resource type="AudioStream" uid="uid://bi4fkveygjxxh" path="res://assets/sfx/impactTin_medium_004.ogg" id="5_jrc7j"]
 
 [node name="SoundManager" type="Node"]
 script = ExtResource("1_o2j0w")
@@ -14,3 +16,9 @@ stream = ExtResource("1_803nd")
 
 [node name="Jump" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("2_t7oor")
+
+[node name="UIPress" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("4_gpl6j")
+
+[node name="UIFocus" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("5_jrc7j")

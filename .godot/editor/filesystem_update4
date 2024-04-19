@@ -7,3 +7,4 @@ res://ui/title_screen.tscn
 res://globals/sound_manager.gd
 res://player.gd
 res://worlds/forest.tscn
+res://ui/title_screen.gd
