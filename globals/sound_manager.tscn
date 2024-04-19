@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://bi4fkveygjxxh" path="res://assets/sfx/impactTin_medium_004.ogg" id="5_jrc7j"]
 
 [node name="SoundManager" type="Node"]
+process_mode = 3
 script = ExtResource("1_o2j0w")
 
 [node name="SFX" type="Node" parent="."]
