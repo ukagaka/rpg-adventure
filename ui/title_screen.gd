@@ -16,7 +16,7 @@ func _ready() -> void:
 		button.mouse_entered.connect(button.grab_focus)
 		
 	SoundManager.setup_ui_sounds(self)
-
+	SoundManager.play_bgm(preload("res://assets/bgm/02 1 titles LOOP.mp3"))
 
 
 
