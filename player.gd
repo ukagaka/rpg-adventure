@@ -198,7 +198,6 @@ func should_slide() -> bool:
 #负责状态转换
 func get_next_state(state: State) -> int:
 	if stats.health == 0:
-		print("waearw")
 		return StateMachine.KEEP_CURRENT if state == State.DYING else State.DYING
 	
 	if pending_damage:

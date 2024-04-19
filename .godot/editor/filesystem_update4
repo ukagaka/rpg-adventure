@@ -14,3 +14,7 @@ res://enemies/enemy.tscn
 res://enemies/enemy.gd
 res://classes/Stats.gd
 res://classes/Teleporter.gd
+res://objects/save_stone.gd
+res://objects/save_stone.tscn
+res://assets/vignette.gdshader
+res://objects/vignette.tscn
