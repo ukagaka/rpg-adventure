@@ -1,10 +1,10 @@
-res://worlds/forest.tscn
+res://globals/game.tscn
+res://ui/main_theme.tres
 res://assets/titles.tres
 res://assets/vignette.gdshader
-res://objects/mine_gate.tscn
-res://globals/game.tscn
-res://player.tscn
-res://worlds/cave.tscn
-res://enemies/enemy.tscn
-res://objects/save_stone.tscn
+res://worlds/forest.gd
+res://globals/game.gd
+res://ui/title_screen.tscn
 res://objects/vignette.tscn
+res://worlds/forest.tscn
+res://ui/title_screen.gd

@@ -1,3 +1,5 @@
+res://assets/generic_char
+res://ui
 res://objects
 res://assets
 res://worlds
@@ -5,5 +7,4 @@ res://globals
 res://classes
 res://
 res://assets/gdb-gamepad-2
-res://ui
 res://enemies
