@@ -171,7 +171,6 @@ func slide(delta: float) -> void:
 	move_and_slide()
 
 func die() -> void:
-	print("dfawware")
 	game_over_screen.show_game_over()
 
 

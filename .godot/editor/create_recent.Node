@@ -1,6 +1,6 @@
-AnimationPlayer
 Label
 ColorRect
+AnimationPlayer
 Node2D
 AnimatedSprite2D
 Button

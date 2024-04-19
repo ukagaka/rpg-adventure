@@ -12,3 +12,9 @@ res://player.tscn
 res://ui/game_over_screen.tscn
 res://ui/game_over_screen.gd
 res://player.gd
+res://enemies/enemy.tscn
+res://enemies/enemy.gd
+res://worlds/cave.gd
+res://ui/game_end_screen.tscn
+res://ui/game_end_screen.gd
+res://worlds/cave.tscn

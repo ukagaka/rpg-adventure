@@ -48,7 +48,7 @@ direction = -1
 position = Vector2(179, 194)
 
 [node name="Player" parent="." instance=ExtResource("5_x6r2y")]
-position = Vector2(448, 33)
+position = Vector2(967, 175)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position_smoothing_enabled = true
