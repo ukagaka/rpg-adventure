@@ -8,3 +8,7 @@ res://ui/title_screen.tscn
 res://objects/vignette.tscn
 res://worlds/forest.tscn
 res://ui/title_screen.gd
+res://player.tscn
+res://ui/game_over_screen.tscn
+res://ui/game_over_screen.gd
+res://player.gd

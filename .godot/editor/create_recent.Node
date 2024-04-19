@@ -1,10 +1,10 @@
 AnimationPlayer
+Label
+ColorRect
 Node2D
 AnimatedSprite2D
 Button
 VBoxContainer
-Label
-ColorRect
 CanvasLayer
 CanvasModulate
 PointLight2D
