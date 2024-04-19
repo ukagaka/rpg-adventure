@@ -315,6 +315,8 @@ func transition_state(from: State, to: State)-> void:
 			#离开地面瞬间起跳后，需要停止动画播放
 			coyote_timer.stop()
 			jump_request_timer.stop()
+			SoundManager.play_sfx("Jump")
+			
 		State.FALL:
 			animation_player.play("fall")
 			if from in GROUND_STATES:
@@ -334,6 +336,8 @@ func transition_state(from: State, to: State)-> void:
 		State.ATTACK_1:
 			animation_player.play("attack_1")
 			is_combo_requested = false
+			SoundManager.play_sfx("Attack")
+			
 		State.ATTACK_2:
 			animation_player.play("attack_2")
 			is_combo_requested = false
