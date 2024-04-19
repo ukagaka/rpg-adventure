@@ -8,3 +8,5 @@ res://globals/sound_manager.gd
 res://player.gd
 res://worlds/forest.tscn
 res://ui/title_screen.gd
+res://worlds/forest.gd
+res://worlds/cave.tscn
