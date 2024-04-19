@@ -9,6 +9,7 @@ shader_parameter/vignette_opacity = 0.505
 shader_parameter/vignette_rgb = Color(0, 0, 0, 1)
 
 [node name="Vignette" type="CanvasLayer"]
+layer = 10
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_i4ilt")
