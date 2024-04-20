@@ -10,3 +10,8 @@ res://ui/title_screen.tscn
 res://worlds/forest.tscn
 res://worlds/cave.tscn
 res://ui/volume_slider.gd
+res://ui/pause_screen.tscn
+res://ui/title_screen.gd
+res://ui/pause_screen.gd
+res://player.gd
+res://worlds/forest.gd

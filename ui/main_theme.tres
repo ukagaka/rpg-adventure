@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://bpnwolnm0yh03"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://bpnwolnm0yh03"]
 
 [ext_resource type="FontFile" uid="uid://bnaltpxcggbqt" path="res://assets/SmileySans-Oblique.otf" id="1_fy4m5"]
 [ext_resource type="Texture2D" uid="uid://cgi4iikch47pq" path="res://assets/legacy_fantasy/Base-01.png" id="1_xsp8q"]
@@ -36,6 +36,20 @@ texture_margin_bottom = 2.0
 expand_margin_bottom = 1.0
 region_rect = Rect2(95, 207, 18, 18)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ybp0e"]
+content_margin_left = 16.0
+content_margin_top = 4.0
+content_margin_right = 16.0
+content_margin_bottom = 4.0
+texture = ExtResource("1_xsp8q")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 2
+region_rect = Rect2(64, 272, 16, 16)
+
 [resource]
 default_font = ExtResource("1_fy4m5")
 Button/colors/font_outline_color = Color(0, 0, 0, 0.709804)
@@ -51,3 +65,5 @@ HSlider/icons/grabber_highlight = SubResource("AtlasTexture_otlk7")
 HSlider/styles/grabber_area = SubResource("StyleBoxEmpty_nhijn")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxEmpty_nhijn")
 HSlider/styles/slider = SubResource("StyleBoxTexture_u358r")
+Label/colors/font_shadow_color = Color(0, 0, 0, 0.745098)
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_ybp0e")

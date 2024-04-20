@@ -12,8 +12,6 @@ func _ready() -> void:
 	#打开默认选择一个，这样就可以通过键盘进行选择了
 	new_game.grab_focus()
 	
-	for button: Button in v.get_children():
-		button.mouse_entered.connect(button.grab_focus)
 		
 	SoundManager.setup_ui_sounds(self)
 	SoundManager.play_bgm(preload("res://assets/bgm/02 1 titles LOOP.mp3"))
