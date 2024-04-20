@@ -394,6 +394,12 @@ func _on_hurtbox_hurt(hitbox: Hitbox) -> void:
 	pending_damage.source = hitbox.owner
 
 
-#攻击野猪的时候，震动信号
+#攻击野猪的时候
 func _on_hitbox_hit(hurtbox: Variant) -> void:
+	#震动屏幕
 	Game.shake_camera(2)
+	
+	#攻击的时候顿帧，有打击感
+	Engine.time_scale = 0.01
+	await get_tree().create_timer(0.5, true, false, true).timeout
+	Engine.time_scale = 1
