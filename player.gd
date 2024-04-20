@@ -401,5 +401,5 @@ func _on_hitbox_hit(hurtbox: Variant) -> void:
 	
 	#攻击的时候顿帧，有打击感
 	Engine.time_scale = 0.01
-	await get_tree().create_timer(0.5, true, false, true).timeout
+	await get_tree().create_timer(0.1, true, false, true).timeout
 	Engine.time_scale = 1
