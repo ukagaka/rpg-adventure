@@ -15,3 +15,5 @@ res://ui/title_screen.gd
 res://ui/pause_screen.gd
 res://player.gd
 res://worlds/forest.gd
+res://ui/virtual_joypad.tscn
+res://ui/Knob.gd

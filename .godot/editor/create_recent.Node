@@ -1,9 +1,10 @@
+TouchScreenButton
+Control
 Label
 GridContainer
 Button
 HBoxContainer
 PanelContainer
-Control
 VBoxContainer
 ColorRect
 HSlider
@@ -11,4 +12,3 @@ AudioStreamPlayer
 Node
 AnimationPlayer
 Node2D
-AnimatedSprite2D
