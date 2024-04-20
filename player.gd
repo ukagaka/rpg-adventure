@@ -351,6 +351,9 @@ func transition_state(from: State, to: State)-> void:
 		State.HURT:
 			animation_player.play("hurt")
 			
+			#角色受到攻击时震动
+			Game.shake_camera(4)
+			
 			stats.health -= pending_damage.amount
 			
 			var dir := pending_damage.source.global_position.direction_to(global_position)
@@ -389,3 +392,8 @@ func _on_hurtbox_hurt(hitbox: Hitbox) -> void:
 	pending_damage = Damage.new()
 	pending_damage.amount = 1
 	pending_damage.source = hitbox.owner
+
+
+#攻击野猪的时候，震动信号
+func _on_hitbox_hit(hurtbox: Variant) -> void:
+	Game.shake_camera(2)

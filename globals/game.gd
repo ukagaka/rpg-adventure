@@ -1,5 +1,8 @@
 extends Node
 
+#受攻击时，屏幕震动信号
+signal camera_should_shake(amount: float)
+
 const  SAVE_PATH := "user://data.sav"
 const CONFIG_PATH := "user://config.ini"
 
@@ -146,3 +149,6 @@ func load_config() -> void:
 		SoundManager.Bus.BGM,
 		config.get_value("audio", "bgm", 1.0)
 	)
+
+func shake_camera(amount: float) -> void:
+	camera_should_shake.emit(amount)

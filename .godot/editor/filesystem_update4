@@ -17,3 +17,6 @@ res://player.gd
 res://worlds/forest.gd
 res://ui/virtual_joypad.tscn
 res://ui/Knob.gd
+res://classes/ShakyCamera.gd
+res://globals/game.tscn
+res://enemies/boar.tscn

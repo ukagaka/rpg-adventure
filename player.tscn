@@ -2605,3 +2605,4 @@ autoplay = "default"
 frame_progress = 0.982572
 
 [connection signal="hurt" from="Graphics/Hurtbox" to="." method="_on_hurtbox_hurt"]
+[connection signal="hit" from="Graphics/Hitbox" to="." method="_on_hitbox_hit"]
