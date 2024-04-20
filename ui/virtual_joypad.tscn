@@ -56,21 +56,25 @@ grow_vertical = 0
 position = Vector2(4, -12)
 texture_normal = SubResource("AtlasTexture_t37d0")
 action = "interact"
+visibility_mode = 1
 
 [node name="TouchScreenButton2" type="TouchScreenButton" parent="Actions"]
 position = Vector2(-12, -27)
 texture_normal = SubResource("AtlasTexture_7ox7o")
 action = "slide"
+visibility_mode = 1
 
 [node name="TouchScreenButton3" type="TouchScreenButton" parent="Actions"]
 position = Vector2(-30, -12)
 texture_normal = SubResource("AtlasTexture_raa7s")
 action = "attack"
+visibility_mode = 1
 
 [node name="TouchScreenButton4" type="TouchScreenButton" parent="Actions"]
 position = Vector2(-12, 3)
 texture_normal = SubResource("AtlasTexture_onogk")
 action = "jump"
+visibility_mode = 1
 
 [node name="Stick" type="Control" parent="."]
 layout_mode = 1
@@ -86,6 +90,7 @@ grow_vertical = 0
 [node name="Knob" type="TouchScreenButton" parent="Stick"]
 position = Vector2(-29, -29)
 texture_normal = SubResource("AtlasTexture_g5n25")
+visibility_mode = 1
 script = ExtResource("2_cda84")
 
 [node name="Pause" type="Control" parent="."]
@@ -104,3 +109,4 @@ position = Vector2(-5, -7)
 texture_normal = SubResource("AtlasTexture_3fy31")
 shape = SubResource("CircleShape2D_15vwe")
 action = "pause"
+visibility_mode = 1
